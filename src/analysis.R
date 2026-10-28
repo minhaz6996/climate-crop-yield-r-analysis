@@ -91,12 +91,28 @@ barplot(cr, horiz = TRUE, las = 1, col = "#3269CF",
         main = "Average Crop Yield by Crop", xlab = "Yield (MT/ha)")
 dev.off()
 
-png("figures/03_correlation_heatmap.png", 1150, 950, res = 130)
-par(mar = c(11, 11, 5, 3))
-heatmap(corr, Rowv = NA, Colv = NA, symm = TRUE, margins = c(13, 13),
-        col = colorRampPalette(c("#d65e5e", "#ffffff", "#3269cf"))(120),
-        main = "Correlation Heatmap")
+
+png("figures/03_correlation_heatmap.png",
+    width = 1700, height = 1600, res = 130)
+
+heatmap(
+  corr,
+  Rowv = NA,
+  Colv = NA,
+  symm = TRUE,
+  scale = "none",
+  margins = c(22, 20),
+  cexRow = 0.85,
+  cexCol = 0.85,
+  breaks = seq(-1, 1, length.out = 121),
+  col = colorRampPalette(
+    c("#d65e5e", "#ffffff", "#3269cf")
+  )(120),
+  main = "Pearson Correlation Heatmap"
+)
+
 dev.off()
+
 
 png("figures/04_temperature_scatter.png", 1100, 650, res = 130)
 plot(dat$average_temperature_c, dat$crop_yield_mt_per_ha, pch = 19,
