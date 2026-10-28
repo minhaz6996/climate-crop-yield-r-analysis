@@ -73,6 +73,26 @@ The values below were **independently recomputed from the provided CSV** using O
 
 > The figures above were recomputed from the supplied CSV with Python for a verified portfolio preview. The provided base-R script generates equivalent analytical views; minor styling differences are expected.
 
+## RStudio-Verified Visualizations
+
+The following figures were generated using the
+successfully executed base-R analysis script.
+
+### Pearson Correlation Heatmap
+
+![R Pearson Correlation Heatmap](figures/R_03_correlation_heatmap.png)
+
+### Regression Model Fit Comparison
+
+![R Regression Model Comparison](figures/R_06_model_r_squared.png)
+
+All four OLS regression models were successfully
+evaluated using 199 observations and 15 variables.
+
+The extended nonlinear model achieved the highest
+R-squared (0.2084), although the findings represent
+statistical associations rather than causal effects.
+
 ## Reproduce with R
 
 Install R from its official distribution, then from the **repository root** run:
@@ -88,7 +108,7 @@ To provide an alternate CSV path:
 Rscript src/analysis.R path/to/your_dataset.csv
 ```
 
-**Execution transparency:** R itself was not available in the preparation environment. The R script was reviewed and the numeric model results independently checked in Python, but a final R runtime smoke test remains recommended.
+**Execution verification:** The R script was successfully executed locally in RStudio using R 4.4.2 and the original 199-observation dataset. All four regression model results matched the independently calculated Python results to rounding precision. Three CSV result files and six R-generated figures were produced successfully. No third-party R packages are required.
 
 ## Project structure
 
