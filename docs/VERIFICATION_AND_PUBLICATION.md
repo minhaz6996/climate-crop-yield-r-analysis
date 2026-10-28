@@ -9,9 +9,8 @@
 - Four OLS regression specifications and Pearson correlations independently reproduced using Python `statsmodels` / `pandas`.
 - Reported main R² matches thesis rounding: **0.102164**, extended R² **0.208355**.
 - Original `d.R` has repeated `install.packages`, machine-specific paths, exploratory non-running placeholder variable names, and manually entered sample figures. These are not retained in the new clean script.
-- New R code is based on base R; this environment **does not have Rscript** so do a local R smoke test before claiming full R reproducibility.
-- Figures in `figures/` are independently regenerated from the supplied CSV with Python (not copied from the thesis PDF).
-
+- The reconstructed base-R analysis script was successfully executed in RStudio using R 4.4.2. All four regression models produced results consistent with the independently verified Python calculations. Three results CSV files and six figures were generated successfully.
+- The original portfolio preview figures were independently generated using Python. Two additional RStudio-generated figures, `R_03_correlation_heatmap.png` and `R_06_model_r_squared.png`, were subsequently verified and published separately.
 ## Before publishing to GitHub
 
 1. Credit Minhazul Alam for the research and manuscript development, R programming, statistical analysis, and visualizations based on his clarification. The name listed as the academic submitter in the source manuscript does not by itself determine who performed the work. Do **not** represent this portfolio project as a thesis formally submitted by Minhazul Alam for his own degree.
